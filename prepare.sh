@@ -15,6 +15,6 @@ fi
 mkdir -p "$CACHE_DIR"
 
 podman run -dit --name "$CONTAINER_ID" \
-    -v "$CACHE_DIR:/home/gitlab-runner/cache":Z "$IMAGE" sleep 14400
+    -v "$CACHE_DIR:/root/_cache":Z "$IMAGE" sleep 14400
 
 podman cp --pause=false /usr/bin/gitlab-runner "$CONTAINER_ID":/usr/bin/gitlab-runner
